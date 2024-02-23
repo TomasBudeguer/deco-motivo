@@ -1,10 +1,14 @@
 import React from "react";
+import { Container } from "react-bootstrap";
+import IntroduccionComp from "../components/IntroduccionComp";
 
 const HomePage = () => {
   return (
-    <div>
-      <h1>Inicio</h1>
-    </div>
+    <>
+    <Container fluid>
+    <IntroduccionComp/>
+    </Container>
+    </>
   );
 };
 
