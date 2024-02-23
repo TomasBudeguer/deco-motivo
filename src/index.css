@@ -10,3 +10,9 @@
 .mainSection {
   flex-grow: 1;
 }
+.color-nav-footer{
+  background-color: #606c68;
+}
+.bg-boton-nav{
+  background-color: #cf312b;
+}
