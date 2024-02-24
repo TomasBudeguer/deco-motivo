@@ -22,7 +22,7 @@ const FooterComp = () => {
                 >
                   &copy; {} Deco Motivo. All Rights Reserved.
                 </Typography>
-                <div className="flex gap-4 me-5 text-blue-gray-900 sm:justify-center">
+                <div className="flex gap-4  text-blue-gray-900 sm:justify-center">
                   <Typography
                     as="a"
                     href="#"

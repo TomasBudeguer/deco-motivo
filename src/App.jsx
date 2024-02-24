@@ -15,7 +15,7 @@ const App = () => {
       <Router>
         <div className="App">
           <NavbarComp />
-          <main className="mainSection ">
+          <main className="mainSection bg-white">
             <RoutesViews />
           </main>
           <FooterComp />

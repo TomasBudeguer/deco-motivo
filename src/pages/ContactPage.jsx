@@ -179,7 +179,7 @@ const ContactPage = () => {
                           {countryCallingCode}
                         </Button>
                       </MenuHandler>
-                      <MenuList className="max-h-[20rem] max-w-[18rem] border-0 bg-neutral-950 text-gray-500">
+                      <MenuList className="max-h-[20rem] max-w-[18rem] border-0 bg-white text-gray-500">
                         {filteredCountries.map(
                           ({ name, flags, countryCallingCode }, index) => (
                             <MenuItem
