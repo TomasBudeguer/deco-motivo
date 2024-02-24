@@ -115,7 +115,7 @@ const ProductsPage = () => {
     <Container>
       <Row>
         <Col>
-          <Card className="w-80 mx-auto">
+          <Card data-aos="zoom-out" className="w-80 mx-auto my-5">
             <CardHeader shadow={false} floated={false} className="h-72">
               <img
                 src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80"
@@ -141,7 +141,7 @@ const ProductsPage = () => {
               </Typography>
             </CardBody>
             <CardFooter className="pt-0">
-              <Link className="no-underline" to={'/product'}>
+              <Link className="no-underline" to={"/product"}>
                 <Button
                   ripple={false}
                   fullWidth={true}

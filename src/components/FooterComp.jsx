@@ -113,7 +113,7 @@ const FooterComp = () => {
         <div className="wave" id="wave3"></div>
         <div className="wave" id="wave4"></div>
       </div>
-      <Row className="flex">
+      <Row className=" mx-0">
         <Col lg={12} className=" flex justify-center  ">
           <div>
             <Link to={"/"}>
@@ -122,8 +122,8 @@ const FooterComp = () => {
           </div>
         </Col>
         <Col lg={12}>
-          <div className="mx-auto w-full max-w-7xl px-8">
-            <div className="mx-auto grid w-full grid-cols-1 gap-8  md:grid-cols-2 lg:grid-cols-4"></div>
+          <div className="mx-auto  ">
+            <div className="mx-auto grid w-full  "></div>
             <div className="flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
               <Typography
                 variant="small"
