@@ -27,10 +27,10 @@ const NavbarComp = () => {
               <img className="img-fluid " src="/logo.png" alt="Logo JDB Devs" />
             </Link>
           </div>
-          <div className="flex lg:hidden">
+          <div className="flex lg:hidden ">
             <button
               type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              className=" inline-flex items-center justify-center rounded-md p-2.5 text-neutral-100"
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
@@ -45,7 +45,7 @@ const NavbarComp = () => {
                 className={`text-sm font-semibold leading-6 px-2 py-1 text-md no-underline rounded-md ${
                   pathname === item.to
                     ? "text-white bg-boton-nav"
-                    : "text-neutral-100 hover:bg-red-600  hover:text-white"
+                    : "text-neutral-100 transition hover:bg-red-600  "
                 }`}
               >
                 {item.name}
@@ -57,7 +57,7 @@ const NavbarComp = () => {
         <Transition.Root as={Fragment} show={mobileMenuOpen}>
           <Dialog
             as="div"
-            className="lg:hidden"
+            className="lg:hidden "
             open={mobileMenuOpen}
             onClose={setMobileMenuOpen}
           >
@@ -70,7 +70,7 @@ const NavbarComp = () => {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <div className="fixed inset-0 z-50" />
+              <div className="fixed inset-0 z-50 " />
             </Transition.Child>
             <Transition.Child
               as={Fragment}
@@ -81,13 +81,14 @@ const NavbarComp = () => {
               leaveFrom="translate-y-0"
               leaveTo="-translate-y-full"
             >
-              <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-neutral-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+              <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto color-nav-footer px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                 <div className="flex items-center justify-between">
-                  <Link to="/" className="-m-1.5 p-1.5 w-44">
-                    {/* <span className="sr-only">Your Company</span> */}
+                  <Link to="/" className="-m-1.5 p-1.5 w-36">
+                    <span className="sr-only">Your Company</span>
+
                     <img
-                      className="img-fluid"
-                      src="11-removebg-preview.png"
+                      className="img-fluid "
+                      src="logo.png"
                       alt="Logo JDB Devs"
                     />
                   </Link>
@@ -96,8 +97,11 @@ const NavbarComp = () => {
                     className="-m-2.5 rounded-md p-2.5 text-gray-700"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    <span className="sr-only">Close menu</span>
-                    <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                    <span className="sr-only ">Close menu</span>
+                    <XMarkIcon
+                      className="h-6 w-6 text-white"
+                      aria-hidden="true"
+                    />
                   </button>
                 </div>
                 <div className="mt-6 flow-root">
@@ -110,7 +114,7 @@ const NavbarComp = () => {
                           onClick={handleClick}
                           className={`block text-base font-semibold leading-7 text-neutral-100 hover:bg-neutral-700 hover:text-white rounded-md px-2 py-1 text-md  no-underline ${
                             pathname === item.to
-                              ? "text-white bg-stone-800"
+                              ? "text-white bg-red-700"
                               : "text-neutral-100 hover:bg-neutral-700 hover:text-white"
                           }`}
                         >

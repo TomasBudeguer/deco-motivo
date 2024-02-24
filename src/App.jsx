@@ -15,10 +15,13 @@ const App = () => {
       <Router>
         <div className="App">
           <NavbarComp />
-          <main className="mainSection bg-white">
+          <main className="mainSection bg-neutral-100">
             <RoutesViews />
           </main>
+          <div className=" bg-neutral-100">
+
           <FooterComp />
+          </div>
         </div>
       </Router>
     </>
