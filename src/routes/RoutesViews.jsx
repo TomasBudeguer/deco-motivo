@@ -9,6 +9,7 @@ const RoutesViews = () => {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/contact" element={<ContactPage />} />
+     
       <Route path="*" element={<Error404 />} />
     </Routes>
   );
