@@ -18,7 +18,10 @@ const App = () => {
           <main className="mainSection bg-neutral-100">
             <RoutesViews />
           </main>
+          <div className=" bg-neutral-100">
+
           <FooterComp />
+          </div>
         </div>
       </Router>
     </>

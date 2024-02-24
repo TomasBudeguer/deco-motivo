@@ -11,9 +11,13 @@ import { Carousel, CarouselItem, Container } from "react-bootstrap";
 const CardProductoPersonalizado = () => {
   return (
     <Container fluid className=" bg-neutral-100">
-      <Carousel indicators={false} className=" bg-neutral-100">
+      <Carousel
+        data-aos="fade-right"
+        indicators={false}
+        className=" bg-neutral-100"
+      >
         <CarouselItem>
-          <Card className="w-full max-w-[95rem] flex-row mx-auto mb-5">
+          <Card  className="w-full max-w-[95rem] flex-row mx-auto mb-5">
             <CardHeader
               shadow={false}
               floated={false}
