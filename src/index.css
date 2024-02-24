@@ -16,6 +16,11 @@
 .bg-boton-nav{
   background-color: #cf312b;
 }
+.carr {
+  object-fit: cover;
+  height: 60vh;
+  width: 100%;
+}
 
 /* .color-home{
   background-color: #e7f3f0;

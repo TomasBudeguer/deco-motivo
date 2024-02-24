@@ -2,6 +2,8 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import IntroduccionComp from "../components/IntroduccionComp";
 import { ColeccionComp } from "../components/ColeccionComp";
+import CarouselComp from "../components/CarouselComp";
+import CardProductoPersonalizado from "../components/CardProductoPersonalizado";
 
 const HomePage = () => {
   return (
@@ -9,6 +11,8 @@ const HomePage = () => {
     <Container fluid>
     <IntroduccionComp/>
     <ColeccionComp/>
+    <CardProductoPersonalizado/>
+
     </Container>
     </>
   );
