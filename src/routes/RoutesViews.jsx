@@ -5,6 +5,7 @@ import HomePage from "../pages/HomePage";
 import ContactPage from "../pages/ContactPage";
 import ProductsPage from "../pages/ProductsPage";
 import OneProdPage from "../pages/OneProdPage";
+import AdminPage from "../pages/AdminPage";
 
 const RoutesViews = () => {
   return (
@@ -13,8 +14,9 @@ const RoutesViews = () => {
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/products" element={<ProductsPage />} />
       <Route path="/product" element={<OneProdPage />} />
-     
+      <Route path="/admin" element={<AdminPage />} />
       <Route path="*" element={<Error404 />} />
+     
     </Routes>
   );
 };
