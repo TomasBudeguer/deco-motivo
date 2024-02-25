@@ -16,7 +16,7 @@ const FechasComp = () => {
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                 <InputGroup className="mb-3">
                   <InputGroup.Text id="groupName">
-                  <i class="bi bi-shop-window"></i>
+                  <i className="bi bi-shop-window"></i>
                   </InputGroup.Text>
                   <Form.Control aria-describedby="groupName" />
                 </InputGroup>
@@ -29,7 +29,7 @@ const FechasComp = () => {
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                 <InputGroup className="mb-3">
                   <InputGroup.Text id="groupName">
-                  <i class="bi bi-geo-alt"></i>
+                  <i className="bi bi-geo-alt"></i>
                   </InputGroup.Text>
                   <Form.Control aria-describedby="groupName" />
                 </InputGroup>
@@ -42,7 +42,7 @@ const FechasComp = () => {
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                 <InputGroup className="mb-3">
                   <InputGroup.Text id="groupPrice">
-                  <i class="bi bi-calendar-date"></i>
+                  <i className="bi bi-calendar-date"></i>
                   </InputGroup.Text>
                   <Form.Control aria-describedby="groupPrice" />
                 </InputGroup>
