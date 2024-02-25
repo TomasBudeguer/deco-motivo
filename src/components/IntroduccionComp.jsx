@@ -34,7 +34,7 @@ const IntroduccionComp = () => {
 
   return (
     <div class="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0 bg-neutral-100">
-      <div class="absolute inset-0  -z-10 overflow-hidden">
+      {/* <div class="absolute inset-0  -z-10 overflow-hidden">
         <svg
           class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-400 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
           aria-hidden="true"
@@ -64,7 +64,7 @@ const IntroduccionComp = () => {
             fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
           />
         </svg>
-      </div>
+      </div> */}
       <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
         <div
           class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
