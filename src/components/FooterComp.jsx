@@ -135,7 +135,7 @@ const FooterComp = () => {
                 <Typography
                   as={Link}
                   to={"/contact"}
-                  className="opacity-80 transition-opacity  hover:opacity-100 text-white iconos"
+                  className="opacity-80 transition-opacity hover:opacity-100 iconos text-instagram-gradient"
                 >
                   <i className="bi bi-instagram  fs-3"></i>
                 </Typography>
@@ -143,7 +143,7 @@ const FooterComp = () => {
                 <Typography
                   as={Link}
                   to={"/contact"}
-                  className="opacity-80 transition-opacity  hover:opacity-100 text-white iconos"
+                  className="opacity-80 transition-opacity hover:opacity-100 iconos text-facebook-gradient"
                 >
                   <i className="bi bi-facebook  fs-3"></i>
                 </Typography>

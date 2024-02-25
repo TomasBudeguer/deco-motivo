@@ -8,12 +8,11 @@ import CardProductoPersonalizado from "../components/CardProductoPersonalizado";
 const HomePage = () => {
   return (
     <>
-    <Container fluid>
-    <IntroduccionComp/>
-    <ColeccionComp/>
-    <CardProductoPersonalizado/>
-
-    </Container>
+      <Container fluid>
+        <IntroduccionComp />
+        <ColeccionComp />
+        <CardProductoPersonalizado />
+      </Container>
     </>
   );
 };

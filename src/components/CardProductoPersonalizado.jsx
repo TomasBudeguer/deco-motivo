@@ -1,118 +1,97 @@
 import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Typography,
-  Avatar,
-  Button,
-} from "@material-tailwind/react";
 import { Carousel, CarouselItem, Container } from "react-bootstrap";
 const CardProductoPersonalizado = () => {
   return (
-    <Container fluid className=" bg-neutral-100">
+    <Container fluid className="bg-neutral-100">
       <Carousel
         data-aos="fade-right"
         indicators={false}
-        className=" bg-neutral-100"
+        controls={false}
+        className="bg-neutral-100"
       >
         <CarouselItem>
-          <Card  className="w-full max-w-[95rem] flex-row mx-auto mb-5">
-            <CardHeader
-              shadow={false}
-              floated={false}
-              className="m-0 w-2/5 shrink-0 rounded-r-none"
-            >
+          <section className="relative isolate overflow-hidden bg-neutral-100 px-6 py-24 sm:py-32 lg:px-8">
+            <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20"></div>
+            <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-neutral-100 shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
+            <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
-                alt="card-image"
-                className="h-full w-full object-cover img-fluid"
+                className="mx-auto h-12"
+                src="https://tailwindui.com/img/logos/workcation-logo-indigo-600.svg"
+                alt=""
               />
-            </CardHeader>
-            <CardBody className="w-full">
-              <Typography
-                variant="h6"
-                color="gray"
-                className="my-4 uppercase text-center"
-              >
-                Nuestros pedidos personalizados
-              </Typography>
-              <Typography variant="h4" color="blue-gray" className="mb-2">
-                Nombre del producto
-              </Typography>
-              <Typography color="gray" className="mb-8 font-normal">
-                Descripcion del producto
-              </Typography>
-              <a href="#" className="inline-block">
-                <Button variant="text" className="flex items-center gap-2">
-                  Realizar un pedido personalizado
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    className="h-4 w-4"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                    />
-                  </svg>
-                </Button>
-              </a>
-            </CardBody>
-          </Card>
+              <figure className="mt-10">
+                <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+                  <p>
+                    “Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nemo expedita voluptas culpa sapiente alias molestiae.
+                    Numquam corrupti in laborum sed rerum et corporis.”
+                  </p>
+                </blockquote>
+                <figcaption className="mt-10">
+                  <img
+                    className="mx-auto h-10 w-10 rounded-full"
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt=""
+                  />
+                  <div className="mt-4 flex items-center justify-center space-x-3 text-base">
+                    <div className="font-semibold text-gray-900">Judith Black</div>
+                    <svg
+                      viewBox="0 0 2 2"
+                      width="3"
+                      height="3"
+                      aria-hidden="true"
+                      className="fill-gray-900"
+                    >
+                      <circle cx="1" cy="1" r="1" />
+                    </svg>
+                    <div className="text-gray-600">CEO of Workcation</div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </section>
         </CarouselItem>
         <CarouselItem>
-          <Card className="w-full max-w-[95rem] flex-row mx-auto mb-5">
-            <CardHeader
-              shadow={false}
-              floated={false}
-              className="m-0 w-2/5 shrink-0 rounded-r-none"
-            >
+          <section className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
+            <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20"></div>
+            <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
+            <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
-                alt="card-image"
-                className="h-full w-full object-cover"
+                className="mx-auto h-12"
+                src="https://tailwindui.com/img/logos/workcation-logo-indigo-600.svg"
+                alt=""
               />
-            </CardHeader>
-            <CardBody className="w-full">
-              <Typography
-                variant="h6"
-                color="gray"
-                className="my-4 uppercase text-center"
-              >
-                Nuestros pedidos personalizados
-              </Typography>
-              <Typography variant="h4" color="blue-gray" className="mb-2">
-                Nombre del producto
-              </Typography>
-              <Typography color="gray" className="mb-8 font-normal">
-                Descripcion del producto
-              </Typography>
-              <a href="#" className="inline-block">
-                <Button variant="text" className="flex items-center gap-2">
-                  Realizar un pedido personalizado
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    className="h-4 w-4"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                    />
-                  </svg>
-                </Button>
-              </a>
-            </CardBody>
-          </Card>
+              <figure className="mt-10">
+                <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+                  <p>
+                    “Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nemo expedita voluptas culpa sapiente alias molestiae.
+                    Numquam corrupti in laborum sed rerum et corporis.”
+                  </p>
+                </blockquote>
+                <figcaption className="mt-10">
+                  <img
+                    className="mx-auto h-10 w-10 rounded-full"
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt=""
+                  />
+                  <div className="mt-4 flex items-center justify-center space-x-3 text-base">
+                    <div className="font-semibold text-gray-900">Judith Black</div>
+                    <svg
+                      viewBox="0 0 2 2"
+                      width="3"
+                      height="3"
+                      aria-hidden="true"
+                      className="fill-gray-900"
+                    >
+                      <circle cx="1" cy="1" r="1" />
+                    </svg>
+                    <div className="text-gray-600">CEO of Workcation</div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </section>
         </CarouselItem>
       </Carousel>
     </Container>
