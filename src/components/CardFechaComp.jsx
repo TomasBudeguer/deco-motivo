@@ -54,13 +54,13 @@ const CardFechaComp = () => {
           <ul className="flex flex-col gap-4">
             <li className="flex gap-4 my-2">
               <span className="rounded-full ">
-                <i class="bi bi-geo-alt"></i>
+                <i className="bi bi-geo-alt"></i>
               </span>
               <Typography className="font-normal">Ubicacion</Typography>
             </li>
             <li className="flex gap-4 my-2">
               <span className="rounded-full ">
-                <i class="bi bi-calendar-date"></i>
+                <i className="bi bi-calendar-date"></i>
               </span>
               <Typography className="font-normal">Ubicacion</Typography>
             </li>
