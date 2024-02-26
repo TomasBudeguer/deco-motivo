@@ -5,8 +5,8 @@ import { Button } from "@material-tailwind/react";
 
 const FechasComp = () => {
   return (
-    <Row className="">
-      <Col lg={6}>
+    <Row>
+      <Col lg={6} className="my-4">
         <div className="mt-2">
           <dl className="divide-y divide-gray-100">
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -16,7 +16,7 @@ const FechasComp = () => {
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                 <InputGroup className="mb-3">
                   <InputGroup.Text id="groupName">
-                  <i className="bi bi-shop-window"></i>
+                    <i className="bi bi-shop-window"></i>
                   </InputGroup.Text>
                   <Form.Control aria-describedby="groupName" />
                 </InputGroup>
@@ -29,7 +29,7 @@ const FechasComp = () => {
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                 <InputGroup className="mb-3">
                   <InputGroup.Text id="groupName">
-                  <i className="bi bi-geo-alt"></i>
+                    <i className="bi bi-geo-alt"></i>
                   </InputGroup.Text>
                   <Form.Control aria-describedby="groupName" />
                 </InputGroup>
@@ -42,7 +42,7 @@ const FechasComp = () => {
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                 <InputGroup className="mb-3">
                   <InputGroup.Text id="groupPrice">
-                  <i className="bi bi-calendar-date"></i>
+                    <i className="bi bi-calendar-date"></i>
                   </InputGroup.Text>
                   <Form.Control aria-describedby="groupPrice" />
                 </InputGroup>
@@ -51,11 +51,10 @@ const FechasComp = () => {
           </dl>
         </div>
         <div className="text-end">
-
-        <Button className="">Guardar Cambios</Button>
+          <Button>Guardar Cambios</Button>
         </div>
       </Col>
-      <Col className="mx-auto" lg={6}>
+      <Col lg={6} className="my-4">
         <CardFechaComp />
       </Col>
     </Row>
