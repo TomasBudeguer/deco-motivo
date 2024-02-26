@@ -58,7 +58,7 @@ const NavbarComp = () => {
           <Dialog
             as="div"
             className="lg:hidden "
-            open={mobileMenuOpen}
+            // open={mobileMenuOpen}
             onClose={setMobileMenuOpen}
           >
             <Transition.Child
@@ -66,7 +66,7 @@ const NavbarComp = () => {
               enter="transition-opacity ease-linear duration-500"
               enterFrom="opacity-0"
               enterTo="opacity-100"
-              leave="transition-opacity ease-linear duration-500"
+              leave="transition-opacity ease-linear duration-500 "
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
@@ -77,7 +77,7 @@ const NavbarComp = () => {
               enter="transition ease-in-out duration-500 transform"
               enterFrom="-translate-y-full"
               enterTo="translate-y-0"
-              leave="transition ease-in-out duration-500 transform"
+              leave="transition ease-in-out duration-1000 transform"
               leaveFrom="translate-y-0"
               leaveTo="-translate-y-full"
             >
