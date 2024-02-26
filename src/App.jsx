@@ -12,7 +12,7 @@ const App = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setCargando(true);
+      setCargando(false);
     }, 3000);
     Aos.init({ duration: 1800, once: true });
   }, []);

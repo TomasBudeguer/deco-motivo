@@ -334,7 +334,7 @@ footer .wave#wave4 {
     color: #cf312b;
     transform: translateY(-15px);
     margin-left: 10px;
-    text-shadow: 0 15px 5px #606c68;
+    text-shadow: 0 15px 5px #fff;
   }
   100% {
     color: #cf312b;
@@ -343,16 +343,16 @@ footer .wave#wave4 {
 }
 
 @media (max-width: 767px) {
-  .bordeLogo{
+  /* .bordeLogo{
     border: 2px solid black;
     padding: 40px 123px;
     border-radius: 100%;
-  }
+  } */
 }
 @media all and (min-width: 576px) and (max-width: 768px) {
-  .bordeLogo{
+  /* .bordeLogo{
     border: 2px solid black;
     padding: 60px 140px;
     border-radius: 100%;
-  }
+  } */
 }
