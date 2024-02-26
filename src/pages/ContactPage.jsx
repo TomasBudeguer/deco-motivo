@@ -13,6 +13,7 @@ import emailjs from "emailjs-com";
 
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { errorComment } from "../utils/validationSchemas";
 
 const ContactPage = () => {
   const { countries } = useCountries();
@@ -117,6 +118,7 @@ const ContactPage = () => {
                 msg: "",
               }}
               onSubmit={(values) => sendComment(values)}
+              validationSchema={errorComment}
             >
               {({ values, errors, touched, handleChange, handleSubmit }) => (
                 <form className="max-w-md mx-auto mt-24" data-aos="fade-left">
@@ -128,7 +130,7 @@ const ContactPage = () => {
                       id="floating_email"
                       value={values.email}
                       onChange={handleChange}
-                      className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-neutral-50 peer"
+                      className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-neutral-50 peer"
                       placeholder=" "
                     />
                     <label
@@ -137,9 +139,9 @@ const ContactPage = () => {
                     >
                       Correo electrónico
                     </label>
-                    {/* <small className="text-danger">
+                    <small className="text-danger">
                       {errors.email && touched.email && errors.email}
-                    </small> */}
+                    </small>
                   </div>
                   <div className="relative z-0 w-full mb-4 group">
                     <input
@@ -149,7 +151,7 @@ const ContactPage = () => {
                       id="floating_name"
                       onChange={handleChange}
                       value={values.nombre}
-                      className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-neutral-50 peer"
+                      className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-neutral-50 peer"
                       placeholder=" "
                     />
                     <label
@@ -158,9 +160,9 @@ const ContactPage = () => {
                     >
                       Nombre y apellido
                     </label>
-                    {/* <small className="text-danger">
+                    <small className="text-danger">
                       {errors.nombre && touched.nombre && errors.nombre}
-                    </small> */}
+                    </small>
                   </div>
                   <div className="relative z-0 w-full mb-4 group flex">
                     <Menu placement="bottom-start">
@@ -209,7 +211,7 @@ const ContactPage = () => {
                       id="floating_tel"
                       onChange={handleChange}
                       value={values.tel}
-                      className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-neutral-50 peer"
+                      className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-neutral-50 peer"
                       placeholder=" "
                     />
                     <label
@@ -219,9 +221,9 @@ const ContactPage = () => {
                       <div className="ms-16">Número de teléfono (Opcional)</div>
                     </label>
                   </div>
-                  {/* <small className="text-danger">
+                  <small className="text-danger">
                     {errors.tel && touched.tel && errors.tel}
-                  </small> */}
+                  </small>
                   <div className="relative z-0 w-full mb-4 mt-4 group">
                     <textarea
                       data-aos="fade-left"
@@ -230,7 +232,7 @@ const ContactPage = () => {
                       id="floating_textarea"
                       onChange={handleChange}
                       value={values.msg}
-                      className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-neutral-50 peer"
+                      className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-red-500 focus:outline-none focus:ring-0 focus:border-neutral-50 peer"
                       placeholder=" "
                     />
                     <label
@@ -239,9 +241,9 @@ const ContactPage = () => {
                     >
                       Mensaje
                     </label>
-                    {/* <small className="text-danger">
+                    <small className="text-danger">
                       {errors.msg && touched.msg && errors.msg}
-                    </small> */}
+                    </small>
                   </div>
                   <div className="text-end">
                     <button
