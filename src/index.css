@@ -22,11 +22,25 @@
   width: 100%;
 }
 
-
-
-
-
-
+.text-instagram-gradient,
+.text-facebook-gradient {
+  color: white;
+}
+.text-instagram-gradient:hover {
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-facebook-gradient:hover {
+  color: #0b6dee;
+}
 /* .color-home{
   background-color: #e7f3f0;
 } */
@@ -151,4 +165,96 @@ footer .wave#wave4 {
   100% {
     background-position-x: 1000px;
   }
+}
+
+.cortarText {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 6;
+  max-width: 100%;
+}
+
+.containers .cardss {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  height: 300px;
+  background-color: #efebe5;
+  border-radius: 20px;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+  transition: 0.5s;
+}
+
+.containers .cardss:hover {
+  height: 400px;
+}
+
+.containers .cardss .image {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  height: 220px;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: 0.5s;
+}
+
+.containers .cardss:hover .image {
+  top: -100px;
+  scale: 0.75;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.containers .cardss .image img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.containers .cardss .content {
+  position: absolute;
+  width: 100%;
+  padding: 0 30px;
+  text-align: center;
+  top: 252px;
+  height: 30px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.containers .cardss:hover .content {
+  height: 250px;
+  top: 130px;
+}
+
+.containers .cardss .content h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #606c68;
+}
+
+.containers .cardss .content p {
+  position: relative;
+  color: #302f2e;
+  font-size: 13px;
+  text-align: justify;
+  top: 5%;
+}
+
+.containers .cardss .content a {
+  position: relative;
+  top: 12%;
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #606c68;
+  color: #efebe5;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
 }

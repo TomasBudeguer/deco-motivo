@@ -19,6 +19,7 @@ import {
 } from "@material-tailwind/react";
 import EditarProd from "./EditarProd";
 import { Form, InputGroup } from "react-bootstrap";
+import CrearProdComp from "./CrearProdComp";
 
 const TABLE_HEAD = ["Nombre", "Precio", "Categoria", "Editar", "Eliminar"];
 
@@ -81,23 +82,23 @@ const TablaProductos = () => {
       <CardHeader floated={false} shadow={false} className="rounded-none">
         <div className="mb-4 flex flex-col justify-between gap-8 md:flex-row md:items-center">
           <div>
-            <Typography variant="h5" color="blue-gray">
-             Lista de productos
+            <Typography variant="h3" color="blue-gray">
+              Lista de productos
             </Typography>
-           
           </div>
           <div className="flex w-full shrink-0 gap-2 md:w-max">
-          <InputGroup className="mb-3">
-        <InputGroup.Text id="basic-addon1"><i class="bi bi-search"></i></InputGroup.Text>
-        <Form.Control
-          placeholder="Buscar productos"
-          type="search"
-          aria-label="Username"
-          aria-describedby="basic-addon1"
-        />
-      </InputGroup>
-           
+            <InputGroup className="mb-3">
+              <InputGroup.Text id="groupSearch">
+                <i className="bi bi-search"></i>
+              </InputGroup.Text>
+              <Form.Control
+                placeholder="Buscar productos"
+                type="search"
+                aria-describedby="groupSearch"
+              />
+            </InputGroup>
           </div>
+          <CrearProdComp/>
         </div>
       </CardHeader>
       <CardBody className="overflow-scroll px-0">

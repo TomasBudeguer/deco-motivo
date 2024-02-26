@@ -99,28 +99,56 @@ const EditarProd = () => {
                 </dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                <dt className="text-sm font-medium leading-6 text-gray-900">
-                  Caracteristicas
-                </dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                  <Form.Group className="mb-3" controlId="medidasId">
-                    <InputGroup>
-                      <InputGroup.Text id="groupMedidas">
-                        <i className="bi bi-arrows-angle-expand"></i>
-                      </InputGroup.Text>
-                      <Form.Control />
-                    </InputGroup>
-                  </Form.Group>
-                  <Form.Group className="mb-3" controlId="materialesId">
-                    <InputGroup>
-                      <InputGroup.Text id="groupMateriales">
-                        <i className="bi bi-hammer"></i>
-                      </InputGroup.Text>
-                      <Form.Control />
-                    </InputGroup>
-                  </Form.Group>
-                </dd>
-              </div>
+                  <dt className="text-sm font-medium leading-6 text-gray-900">
+                    Características
+                  </dt>
+                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                    <Form.Group className="mb-3" controlId="medidasId">
+                      <Form.Label>Medidas</Form.Label>
+                      <InputGroup>
+                        <InputGroup.Text id="groupMedidas">
+                          <i className="bi bi-arrows-angle-expand"></i>
+                        </InputGroup.Text>
+                        <Form.Control
+                          placeholder="Ej: 20cm x 20cm"
+                          // onChange={handleChange}
+                          name="medidas"
+                          // value={values.medidas}
+                          // className={
+                          //   errors.medidas && touched.medidas && "is-invalid"
+                          // }
+                        />
+                      </InputGroup>
+                      {/* <small className="text-danger">
+                        {errors.medidas && touched.medidas && errors.medidas}
+                      </small> */}
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="materialesId">
+                      <Form.Label>Materiales</Form.Label>
+                      <InputGroup>
+                        <InputGroup.Text id="groupMateriales">
+                          <i className="bi bi-hammer"></i>
+                        </InputGroup.Text>
+                        <Form.Control
+                          placeholder="Ej: Madera"
+                          // onChange={handleChange}
+                          name="materiales"
+                          // value={values.materiales}
+                          // className={
+                          //   errors.materiales &&
+                          //   touched.materiales &&
+                          //   "is-invalid"
+                          // }
+                        />
+                      </InputGroup>
+                      {/* <small className="text-danger">
+                        {errors.materiales &&
+                          touched.materiales &&
+                          errors.materiales}
+                      </small> */}
+                    </Form.Group>
+                  </dd>
+                </div>
             </dl>
           </div>
         </Modal.Body>
