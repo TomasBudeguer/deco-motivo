@@ -34,7 +34,7 @@ const HomePage = () => {
       <Container fluid>
         <IntroduccionComp />
         <Row id="cardsMembers">
-        <Typography data-aos="fade-right" variant="h2"  className="ms-4">
+        <Typography data-aos="fade-right" variant="h2"  className="">
           Nuesta colección
         </Typography>
           
