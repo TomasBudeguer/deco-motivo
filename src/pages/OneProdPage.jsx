@@ -1,12 +1,8 @@
 import { Button } from "@material-tailwind/react";
 import React from "react";
 const features = [
-  { name: "Caracteristicas", description: "Descripcion" },
-  { name: "Caracteristicas", description: "Descripcion" },
-  { name: "Caracteristicas", description: "Descripcion" },
-  { name: "Caracteristicas", description: "Descripcion" },
-  { name: "Caracteristicas", description: "Descripcion" },
-  { name: "Caracteristicas", description: "Descripcion" },
+  { name: "Medidas", description: "Descripcion" },
+  { name: "Materiales", description: "Descripcion" }
 ];
 const OneProdPage = () => {
   return (
