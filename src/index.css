@@ -7,6 +7,9 @@
   src: url('/fonts/Evadoffi.otf') format('OpenType');
   /* Añade otros formatos si tu fuente los tiene */
 }
+*{
+  box-sizing: border-box;
+}
 .fuenteEvadoffi{
   font-family: 'Evadoffi';
 }
