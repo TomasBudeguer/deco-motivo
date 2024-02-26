@@ -5,10 +5,8 @@ const PantallaDeCarga = () => {
   return (
     <Container
       fluid
-      className="text-center d-flex justify-content-center align-items-center vh-100 color-nav-footer "
+      className="text-center d-flex justify-content-center align-items-center vh-100 color-nav-footer pantalla-carga"
     >
-        
-
       <div className="loaders d-flex justify-center fuenteEvadoffi font-bold ">
         <span>D</span>
         <span>e</span>
@@ -23,11 +21,10 @@ const PantallaDeCarga = () => {
         <span>i</span>
         <span>v</span>
         <span>o</span>
-        </div>
+      </div>
       <div className="mt-56">
         <Spinner animation="border text-white" />
       </div>
-        
     </Container>
     // <Container
     //   fluid

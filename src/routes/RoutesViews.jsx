@@ -6,6 +6,7 @@ import ContactPage from "../pages/ContactPage";
 import ProductsPage from "../pages/ProductsPage";
 import OneProdPage from "../pages/OneProdPage";
 import AdminPage from "../pages/AdminPage";
+import Login from "../pages/Login";
 
 const RoutesViews = () => {
   return (
@@ -15,6 +16,7 @@ const RoutesViews = () => {
       <Route path="/products" element={<ProductsPage />} />
       <Route path="/product" element={<OneProdPage />} />
       <Route path="/admin" element={<AdminPage />} />
+      <Route path="/login" element={<Login />} />
       <Route path="*" element={<Error404 />} />
      
     </Routes>
