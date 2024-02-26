@@ -14,7 +14,7 @@ const RoutesViews = () => {
       <Route path="/" element={<HomePage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/products" element={<ProductsPage />} />
-      <Route path="/product" element={<OneProdPage />} />
+      <Route path="/product/:id" element={<OneProdPage />} />
       <Route path="/admin" element={<AdminPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="*" element={<Error404 />} />
