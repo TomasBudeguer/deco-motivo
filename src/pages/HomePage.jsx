@@ -33,15 +33,7 @@ const HomePage = () => {
     <>
       <Container fluid>
         <IntroduccionComp />
-        <Row id="cardsMembers">
-        <Typography data-aos="fade-right" variant="h2"  className="">
-          Nuesta colección
-        </Typography>
-          
-              {callouts.map((props, key) => (
-                <ColeccionComp key={key} {...props} />
-              ))}
-            </Row>
+      <ColeccionComp/>
         <CardProductoPersonalizado />
       </Container>
     </>
