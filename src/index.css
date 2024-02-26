@@ -3,12 +3,12 @@
 @import "tailwindcss/utilities";
 
 @font-face {
-  font-family: 'Evadoffi';
-  src: url('/fonts/Evadoffi.otf') format('OpenType');
+  font-family: "Evadoffi";
+  src: url("/fonts/Evadoffi.otf") format("OpenType");
   /* Añade otros formatos si tu fuente los tiene */
 }
-.fuenteEvadoffi{
-  font-family: 'Evadoffi';
+.fuenteEvadoffi {
+  font-family: "Evadoffi";
 }
 .App {
   display: flex;
@@ -21,7 +21,7 @@
 .color-nav-footer {
   background-color: #606c68;
 }
-.colorLogo{
+.colorLogo {
   color: #606c68;
 }
 .bg-boton-nav {
@@ -318,7 +318,7 @@ footer .wave#wave4 {
   animation-delay: 1.1s;
 }
 
-.bordeLogo{
+.bordeLogo {
   border: 2px solid black;
   padding: 0px 123px;
   border-radius: 100%;
@@ -339,6 +339,22 @@ footer .wave#wave4 {
   100% {
     color: #cf312b;
     transform: translateY(0);
+  }
+}
+
+.pantalla-carga {
+  animation: crossFade 3.1s ease-in-out infinite;
+}
+
+@keyframes crossFade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
