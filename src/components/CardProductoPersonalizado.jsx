@@ -12,7 +12,7 @@ const CardProductoPersonalizado = () => {
       >
         <CarouselItem>
           <section className="relative isolate overflow-hidden bg-neutral-100 px-6 py-24 sm:py-32 lg:px-8 text-center">
-            <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-neutral-100 shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
+            <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-neutral-100 shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50   xl:origin-center"></div>
             <Row>
               <Col sm={12} md={6} data-aos="fade-right">
                 <div className="mx-auto max-w-2xl lg:max-w-4xl">

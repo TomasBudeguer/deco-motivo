@@ -20,7 +20,7 @@ const CardProducts = () => {
               quis justo finibus congue. Nulla facilisi. Vestibulum eget libero
               consectetur, gravida purus non, vestibulum justo.
             </p>
-            <Link to={"/"}>Ver mas</Link>
+            <Link to={"/product"}>Ver mas</Link>
           </div>
         </div>
       </div>

@@ -9,3 +9,8 @@ export const errorProdSchema = yup.object().shape({
     medidas: yup.string().required("Campo medidas del producto obligatorio"),
     materiales: yup.string().required("Campo materiales del producto obligatorio"),
 })
+export const errorAdminSchema = yup.object().shape({
+    nombre: yup.string().required('Campo nombre del usuario obligatorio'),
+    email: yup.string().required('Campo correo electrónico obligatorio'),
+    pass: yup.string().required('Campo contraseña obligatorio'),
+})
