@@ -10,14 +10,35 @@ import {
 import { Col, Container, Row } from "react-bootstrap";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
+import CardProducts from "../components/CardProducts";
 const products = [
   {
     id: 1,
-    name: "Basic Tee",
+    name: "Producto 1",
     href: "#",
     imageSrc:
       "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
+    imageAlt: "Front of men's Producto 1 in black.",
+    price: "$35",
+    color: "Black",
+  },
+  {
+    id: 2,
+    name: "Producto 2",
+    href: "#",
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+    imageAlt: "Front of men's Producto 2 in black.",
+    price: "$35",
+    color: "Black",
+  },
+  {
+    id: 3,
+    name: "Producto 3",
+    href: "#",
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+    imageAlt: "Front of men's Producto 3 in black.",
     price: "$35",
     color: "Black",
   },
@@ -113,8 +134,12 @@ const products = [
 const ProductsPage = () => {
   return (
     <Container>
-      <Row>
-        <Col>
+      <Row className="my-5">
+        {products.map((prod) => (
+          <CardProducts key={prod.id} prod={prod}></CardProducts>
+        ))}
+        <CardProducts></CardProducts>
+        {/* <Col>
           <Card data-aos="zoom-out" className="w-80 mx-auto my-5">
             <CardHeader shadow={false} floated={false} className="h-72">
               <img
@@ -152,7 +177,7 @@ const ProductsPage = () => {
               </Link>
             </CardFooter>
           </Card>
-        </Col>
+        </Col> */}
       </Row>
       <Row>
         <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
