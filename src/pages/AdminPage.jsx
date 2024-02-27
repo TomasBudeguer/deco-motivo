@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
@@ -6,8 +6,42 @@ import TablaUsuarios from "../components/TablaUsuarios";
 import TablaProductos from "../components/TablaProductos";
 import EditarProd from "../components/EditarProd";
 import FechasComp from "../components/FechasComp";
+import clientAxios from "../utils/axiosClient";
 
 const AdminPage = () => {
+  const token = JSON.parse(sessionStorage.getItem("token"));
+
+  const [admins, setAdmins] = useState([]);
+  const [products, setProducts] = useState([]);
+
+  const getProducts = async () => {
+    try {
+      const res = await clientAxios.get("/products");
+      setProducts(res.data.allProds)
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getAdminUsers = async () => {
+    try {
+      const response = await fetch("http://localhost:4444/admins", {
+        method: "GET",
+        headers: {
+          "Content-Type": "Application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const res = await response.json();
+      setAdmins(res.allAdmins);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getAdminUsers(), getProducts()
+  }, []);
   return (
     <Container>
       <Tabs
@@ -38,7 +72,7 @@ const AdminPage = () => {
             </span>
           }
         >
-          <TablaProductos />
+          <TablaProductos products={products}/>
         </Tab>
         <Tab
           eventKey="admin"
@@ -48,7 +82,7 @@ const AdminPage = () => {
             </span>
           }
         >
-          <TablaUsuarios />
+          <TablaUsuarios admins={admins} />
         </Tab>
         <Tab
           eventKey="longer-tab"

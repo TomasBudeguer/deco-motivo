@@ -132,21 +132,22 @@ const FooterComp = () => {
                 &copy; {} Deco Motivo. All Rights Reserved.
               </Typography>
               <div className="flex gap-4  text-blue-gray-900 sm:justify-center ">
-                <Typography
-                  as={Link}
-                  to={"/contact"}
+                <a
+                  
+                  href="https://www.instagram.com/deco_motivo/"
+                  target="_blank"
                   className="opacity-80 transition-opacity hover:opacity-100 iconos text-instagram-gradient"
                 >
                   <i className="bi bi-instagram  fs-3"></i>
-                </Typography>
+                </a>
 
-                <Typography
-                  as={Link}
-                  to={"/contact"}
+                <a
+                  
+                  href=""
                   className="opacity-80 transition-opacity hover:opacity-100 iconos text-facebook-gradient"
                 >
-                  <i className="bi bi-facebook  fs-3"></i>
-                </Typography>
+                  <i className="bi bi-facebook fs-3"></i>
+                </a>
               </div>
             </div>
           </div>

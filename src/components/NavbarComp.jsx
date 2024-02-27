@@ -13,6 +13,8 @@ const NavbarComp = () => {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const token = JSON.parse(sessionStorage.getItem("token"));
+
   const handleClick = () => setMobileMenuOpen(!mobileMenuOpen);
   return (
     <>
@@ -51,6 +53,14 @@ const NavbarComp = () => {
                 {item.name}
               </Link>
             ))}
+            {!token && (
+              <Link
+                className={`text-sm font-semibold leading-6 px-2 py-1 text-md no-underline rounded-md text-neutral-100 transition hover:bg-red-600 
+              }`} to={"/login"}
+              >
+                Administradores
+              </Link>
+            )}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end"></div>
         </nav>

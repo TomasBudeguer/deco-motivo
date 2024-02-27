@@ -2,23 +2,23 @@ import React from "react";
 import { Col, Container } from "react-bootstrap";
 const callouts = [
   {
-    name: 'Producto 1',
-    description: 'Work from home accessories',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg',
+    name: 'Tablas',
+    description: 'Tablas de madera con grabado láser',
+    imageSrc: 'https://acdn.mitiendanube.com/stores/001/045/108/products/121-09de8ccf489c1803e016601753869731-1024-1024.png',
     imageAlt: 'Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.',
     href: '#',
   },
   {
-    name: 'Producto 2',
-    description: 'Journals and note-taking',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg',
+    name: 'Cuadros',
+    description: 'Cuadros pintados personalizados',
+    imageSrc: '/cuadroColeccion.jpeg',
     imageAlt: 'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.',
     href: '#',
   },
   {
-    name: 'Producto 3',
-    description: 'Daily commute essentials',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg',
+    name: 'Mates',
+    description: 'Mates artesanales',
+    imageSrc: 'https://www.entrerios.gov.ar/manosentrerrianas/sites/default/files/styles/prueba/public/galeria_emprendedor/MATE%20ARTESANAL%20GW%20%2824%29.jpg?itok=YFIeL8wD',
     imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
     href: '#',
   },

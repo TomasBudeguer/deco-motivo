@@ -4,12 +4,9 @@ import { Carousel, CarouselItem, Col, Container, Row } from "react-bootstrap";
 const CardProductoPersonalizado = () => {
   return (
     <Container fluid className="bg-neutral-100">
-      <Carousel
-        
-        indicators={false}
-        controls={false}
-        className="bg-neutral-100"
-      >
+      <Typography variant="h2">Pedidos personalizados</Typography>
+
+      <Carousel indicators={false} controls={false} className="bg-neutral-100">
         <CarouselItem>
           <section className="relative isolate overflow-hidden bg-neutral-100 px-6 py-24 sm:py-32 lg:px-8 text-center">
             <div className="absolute inset-y-0 right-1/2 -z-10  w-[200%] origin-bottom-left skew-x-[-30deg] bg-neutral-100 shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50   xl:origin-center"></div>
@@ -22,10 +19,14 @@ const CardProductoPersonalizado = () => {
                     alt=""
                   />
                   <Typography variant="h4">
-                    Nuestros pedidos personalizados
+                    Tabla grabado láser Argentina
                   </Typography>
                   <figure className="">
-                    <Typography variant="p">Descripcion del pedido</Typography>
+                    <Typography>
+                      Un cliente nos solicitó una tabla de madera con diseño de
+                      nuestro país para el mundial de Qatar 2022. ¡El cliente
+                      quedó muy satisfecho con el resultado!
+                    </Typography>
                   </figure>
                 </div>
               </Col>
@@ -33,15 +34,14 @@ const CardProductoPersonalizado = () => {
                 <figcaption className="mt-10">
                   <img
                     className="mx-auto  rounded-full"
-                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
+                    src="https://http2.mlstatic.com/D_NQ_NP_740973-MLA51871385764_102022-O.webp"
+                    alt="Tabla"
                   />
                 </figcaption>
               </Col>
             </Row>
           </section>
         </CarouselItem>
-       
       </Carousel>
     </Container>
   );
