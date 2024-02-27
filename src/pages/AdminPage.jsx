@@ -82,7 +82,7 @@ const AdminPage = () => {
             </span>
           }
         >
-          <TablaUsuarios admins={admins} />
+          <TablaUsuarios admins={admins} getAdminUsers={getAdminUsers} />
         </Tab>
         <Tab
           eventKey="longer-tab"

@@ -12,7 +12,7 @@ export const errorProdSchema = yup.object().shape({
     .required("Campo materiales del producto obligatorio"),
 });
 export const errorAdminSchema = yup.object().shape({
-  nombre: yup.string().required("Campo nombre del usuario obligatorio"),
+  name: yup.string().required("Campo nombre del usuario obligatorio"),
   email: yup.string().required("Campo correo electrónico obligatorio"),
   pass: yup.string().required("Campo contraseña obligatorio"),
 });
