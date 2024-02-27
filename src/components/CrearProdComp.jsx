@@ -1,32 +1,97 @@
 import React from "react";
 import { useState } from "react";
-// import Button from "react-bootstrap/Button";
+
 import Modal from "react-bootstrap/Modal";
-import { PaperClipIcon } from "@heroicons/react/20/solid";
+
 import { Form, InputGroup } from "react-bootstrap";
-import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
+import { Bounce, ToastContainer, toast } from "react-toastify";
+
 import { Formik } from "formik";
 import { errorProdSchema } from "../utils/validationSchemas";
 import { Button } from "@material-tailwind/react";
-import clientAxios from "../utils/axiosClient";
 
-const CrearProdComp = () => {
+const CrearProdComp = ({ getProducts }) => {
+  const token = JSON.parse(sessionStorage.getItem("token"));
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const createProduct = async (values) => {
+  const createProduct = async ({
+    nombre,
+    precio,
+    categoria,
+    descripcion,
+    medidas,
+    imgs,
+    materiales,
+  }) => {
     try {
-      const res = await clientAxios.post("/products")
+      const formData = new FormData();
+
+      formData.append("nombre", nombre);
+      formData.append("precio", precio);
+      formData.append("categoria", categoria);
+      formData.append("descripcion", descripcion);
+      formData.append("medidas", medidas);
+      formData.append("materiales", materiales);
+
+      imgs.forEach((imagen) => {
+        formData.append(`imgs`, imagen);
+      });
+
+      const res = await fetch(
+        `${import.meta.env.VITE_BACK_URL_LOCAL}/products`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        }
+      );
+
+      const response = await res.json();
+
+      if (response.status === 201) {
+        toast.success(response.msg, {
+          position: "bottom-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          transition: Bounce,
+        });
+        getProducts();
+        handleClose();
+      }
     } catch (error) {
-      
+      toast.error(error, {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+      });
     }
-  }
+  };
 
   return (
     <>
-      <Button variant="filled" className="rounded-lg" onClick={handleShow}>
+      <ToastContainer />
+      <Button
+        variant="filled"
+        className="rounded-lg bg-neutral-900"
+        onClick={handleShow}
+      >
         Crear producto
       </Button>
 
@@ -39,16 +104,23 @@ const CrearProdComp = () => {
             initialValues={{
               nombre: "",
               precio: "",
-              desc: "",
-              img: "",
-              cat: "",
+              descripcion: "",
+              imgs: [],
+              categoria: "",
               medidas: "",
               materiales: "",
             }}
             validationSchema={errorProdSchema}
             onSubmit={(values) => createProduct(values)}
           >
-            {({ values, errors, touched, handleChange, handleSubmit }) => (
+            {({
+              values,
+              errors,
+              touched,
+              handleChange,
+              handleSubmit,
+              setFieldValue,
+            }) => (
               <Form className="divide-y divide-gray-100">
                 <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-sm font-medium leading-6 text-gray-900">
@@ -111,19 +183,23 @@ const CrearProdComp = () => {
                         <i className="bi bi-tag"></i>
                       </InputGroup.Text>
                       <Form.Select
-                        name="cat"
+                        name="categoria"
                         onChange={handleChange}
-                        value={values.cat}
-                        className={errors.cat && touched.cat && "is-invalid"}
+                        value={values.categoria}
+                        className={
+                          errors.categoria && touched.categoria && "is-invalid"
+                        }
                       >
-                        <option value="">Categoría no seleccionada</option>
+                        <option value="">Categoria no seleccionada</option>
                         <option value="Cuadros">Cuadros</option>
                         <option value="Tablas">Tablas</option>
                         <option value="Mates">Mates</option>
                       </Form.Select>
                     </InputGroup>
                     <small className="text-danger">
-                      {errors.cat && touched.cat && errors.cat}
+                      {errors.categoria &&
+                        touched.categoria &&
+                        errors.categoria}
                     </small>
                   </dd>
                 </div>
@@ -140,14 +216,20 @@ const CrearProdComp = () => {
                         as="textarea"
                         rows={2}
                         placeholder="Pequeña descripción sobre el producto"
-                        name="desc"
+                        name="descripcion"
                         onChange={handleChange}
-                        value={values.desc}
-                        className={errors.desc && touched.desc && "is-invalid"}
+                        value={values.descripcion}
+                        className={
+                          errors.descripcion &&
+                          touched.descripcion &&
+                          "is-invalid"
+                        }
                       />
                     </InputGroup>
                     <small className="text-danger">
-                      {errors.desc && touched.desc && errors.desc}
+                      {errors.descripcion &&
+                        touched.descripcion &&
+                        errors.descripcion}
                     </small>
                   </dd>
                 </div>
@@ -210,29 +292,26 @@ const CrearProdComp = () => {
                     <Form.Control
                       type="file"
                       multiple
-                      value={values.img}
-                      onChange={handleChange}
-                      name="img"
-                      className={errors.img && touched.img && "is-invalid"}
+                      name="imgs"
+                      onChange={(event) => {
+                        const filesArray = Array.from(
+                          event.currentTarget.files
+                        );
+                        setFieldValue("imgs", filesArray);
+                      }}
+                      className={errors.imgs && touched.imgs && "is-invalid"}
                     />
                     <small className="text-danger">
-                      {errors.img && touched.img && errors.img}
+                      {errors.imgs && touched.imgs && errors.imgs}
                     </small>
                   </dd>
-                  <div className="sm:col-start-2 sm:col-span-1 flex justify-center">
-                    {/* Acá va a ir la Previsualización de la imagen :D */}
-                    {/* <img
-                      src="/logo.png"
-                      alt="Previsualización de imagen"
-                      className="mt-3"
-                    /> */}
-                  </div>
+                  <div className="sm:col-start-2 sm:col-span-1 flex justify-center"></div>
                 </div>
                 <div className="text-end">
                   <Button
                     type="submit"
                     onClick={handleSubmit}
-                    className="mt-3 rounded-full"
+                    className="mt-3 rounded-full bg-neutral-900"
                   >
                     Crear producto
                   </Button>

@@ -92,7 +92,7 @@ const CrearAdminComp = ({ getAdminUsers }) => {
                   <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                     <InputGroup className="mb-3">
                       <InputGroup.Text id="groupName">
-                        <i className="bi bi-upc-scan"></i>
+                      <i class="bi bi-person"></i>
                       </InputGroup.Text>
                       <Form.Control
                         name="name"
