@@ -3,13 +3,15 @@
 @import "tailwindcss/utilities";
 
 @font-face {
-  font-family: "Evadoffi";
-  src: url("/fonts/Evadoffi.otf") format("OpenType");
+  font-family: "UnJourMerveilleuxDemo-Regular";
+  src: url("/fonts/UnJourMerveilleuxDemo-Regular.ttf") format("TrueType");
   /* Añade otros formatos si tu fuente los tiene */
 }
-.fuenteEvadoffi {
-  font-family: "Evadoffi";
+
+.fuenteDeco {
+  font-family: "UnJourMerveilleuxDemo-Regular";
 }
+
 .App {
   display: flex;
   flex-direction: column;
@@ -277,7 +279,7 @@ footer .wave#wave4 {
   transform: translateX(-50%) translate(-50%);
 }
 .loaders span {
-  font-size: 100px;
+  font-size: 90px;
   color: rgba(255, 255, 255, 0.1);
   display: inline-block;
   transition: all 0.5s;
@@ -344,6 +346,30 @@ footer .wave#wave4 {
 
 .pantalla-carga {
   animation: crossFade 3.1s ease-in-out infinite;
+}
+
+.line-box {
+  padding: 1px;
+  width: 40%;
+  border: 2px solid white;
+  border-radius: 20px;
+}
+
+.line-box .line {
+  height: 20px;
+  border-radius: 20px;
+  /* background: #cf312b; */
+  background: linear-gradient(to bottom, #cf312b, #fff);
+  animation: carga 3s forwards cubic-bezier(0, 0, 0, 0);
+}
+
+@keyframes carga {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 @keyframes crossFade {
