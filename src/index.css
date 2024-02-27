@@ -427,7 +427,7 @@ footer .wave#wave4 {
   .bubbles span {
     position: relative;
     width: 40px;
-    height: 40px;
+    height: 6vh;
     background-color: #cf312b;
     border-radius: 50%;
     box-shadow: 0 0 0 10px #cf312b44,
