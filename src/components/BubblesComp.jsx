@@ -47,7 +47,7 @@ const BubblesComp = () => {
           <span style={{ "--i": 13 }}></span>
           <span style={{ "--i": 28 }}></span>
         </div>
-        <div className="container vh-100  mx-auto d-flex justify-center  align-items-center">
+        <div className="container vh-100  mx-auto d-flex justify-center  align-items-center" data-aos="zoom-in-up">
           <div className="text-center mb-56">
             <div className="w-64 mx-auto">
               <img src="/logo-footer.png" alt="" />
