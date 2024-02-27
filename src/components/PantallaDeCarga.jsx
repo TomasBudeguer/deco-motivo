@@ -7,13 +7,13 @@ const PantallaDeCarga = () => {
       fluid
       className="text-center d-flex justify-content-center align-items-center vh-100 color-nav-footer pantalla-carga"
     >
-      <div className="loaders d-flex justify-center fuenteEvadoffi font-bold ">
+      <div className="loaders d-flex justify-center fuenteDeco font-bold ">
         <span>D</span>
         <span>e</span>
         <span>c</span>
         <span>o</span>
       </div>
-      <div className="loaders d-flex justify-center fuenteEvadoffi font-bold mt-24">
+      <div className="loaders d-flex justify-center fuenteDeco font-bold mt-24">
         <span></span>
         <span>M</span>
         <span>o</span>
@@ -22,8 +22,12 @@ const PantallaDeCarga = () => {
         <span>v</span>
         <span>o</span>
       </div>
-      <div className="mt-56">
+      {/* <div className="mt-56">
         <Spinner animation="border text-white" />
+      </div> */}
+
+      <div className="line-box mt-56">
+        <div className="line"></div>
       </div>
     </Container>
     // <Container
