@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Spinner } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
+import { Progress } from "@material-tailwind/react";
 const PantallaDeCarga = () => {
   return (
     <Container
@@ -27,7 +28,11 @@ const PantallaDeCarga = () => {
       </div> */}
 
       <div className="line-box mt-56">
-        <div className="line"></div>
+        {/* <div className="line"></div> */}
+        <Progress
+          size="lg"
+          className="border line border-gray-900/10 bg-gray-900/5 p-1"
+        />
       </div>
     </Container>
     // <Container

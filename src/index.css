@@ -358,8 +358,8 @@ footer .wave#wave4 {
 .line-box .line {
   height: 20px;
   border-radius: 20px;
-  /* background: #cf312b; */
-  background: linear-gradient(to bottom, #cf312b, #fff);
+  background: #cf312b;
+  /* background: linear-gradient(to bottom, #cf312b, #fff); */
   animation: carga 3s forwards cubic-bezier(0, 0, 0, 0);
 }
 
