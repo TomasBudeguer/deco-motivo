@@ -426,8 +426,8 @@ footer .wave#wave4 {
 @media (max-width: 767px) {
   .bubbles span {
     position: relative;
-    width: 100px;
-    height: 60px;
+    width: 20px;
+    height: 20px;
     background-color: #cf312b;
     border-radius: 50%;
     box-shadow: 0 0 0 10px #cf312b44,
