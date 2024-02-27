@@ -7,6 +7,7 @@ import ProductsPage from "../pages/ProductsPage";
 import OneProdPage from "../pages/OneProdPage";
 import AdminPage from "../pages/AdminPage";
 import Login from "../pages/Login";
+import PrivateRoutes from "../components/PrivateRoutes";
 
 const RoutesViews = () => {
   return (
@@ -15,10 +16,16 @@ const RoutesViews = () => {
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/products" element={<ProductsPage />} />
       <Route path="/product/:id" element={<OneProdPage />} />
-      <Route path="/admin" element={<AdminPage />} />
+      <Route
+        path="/admin"
+        element={
+          <PrivateRoutes>
+            <AdminPage />
+          </PrivateRoutes>
+        }
+      />
       <Route path="/login" element={<Login />} />
       <Route path="*" element={<Error404 />} />
-     
     </Routes>
   );
 };

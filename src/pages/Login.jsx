@@ -1,8 +1,32 @@
 import { Formik } from "formik";
 import React from "react";
 import { errorLoginAdmin } from "../utils/validationSchemas";
+import clientAxios, { config } from "../utils/axiosClient";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate()
+  const ingresarCuenta = async ({ email, pass }) => {
+    try {
+      const res = await clientAxios.post(
+        "/admins/login",
+        {
+          email,
+          pass,
+        },
+        config
+      );
+      if(res.status === 200){
+        sessionStorage.setItem("token", JSON.stringify(res?.data?.token))
+        sessionStorage.setItem("idAdmin", JSON.stringify(res?.data?.userExist._id))
+
+        navigate("/admin")
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">

@@ -1,12 +1,13 @@
 import React from "react";
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { PaperClipIcon } from "@heroicons/react/20/solid";
 import { Form, InputGroup } from "react-bootstrap";
 import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
+import { Formik } from "formik";
+import { Button } from "@material-tailwind/react";
 
-const EditarProd = () => {
+const EditarProd = ({ prod }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -39,66 +40,121 @@ const EditarProd = () => {
           <Modal.Title>Editar producto</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="mt-2">
-            <dl className="divide-y divide-gray-100">
-              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                <dt className="text-sm font-medium leading-6 text-gray-900">
-                  Nombre
-                </dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                  <InputGroup className="mb-3">
-                    <InputGroup.Text id="groupName">
-                      <i className="bi bi-upc-scan"></i>
-                    </InputGroup.Text>
-                    <Form.Control aria-describedby="groupName" />
-                  </InputGroup>
-                </dd>
-              </div>
-              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                <dt className="text-sm font-medium leading-6 text-gray-900">
-                  Precio
-                </dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                  <InputGroup className="mb-3">
-                    <InputGroup.Text id="groupPrice">
-                      <i className="bi bi-currency-dollar"></i>
-                    </InputGroup.Text>
-                    <Form.Control aria-describedby="groupPrice" />
-                  </InputGroup>
-                </dd>
-              </div>
-              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                <dt className="text-sm font-medium leading-6 text-gray-900">
-                  Categoría
-                </dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                  <InputGroup className="mb-3">
-                    <InputGroup.Text id="groupCat">
-                      <i className="bi bi-tag"></i>
-                    </InputGroup.Text>
-                    <Form.Select>
-                      <option value="">Categoría no seleccionada</option>
-                      <option value="Cuadros">Cuadros</option>
-                      <option value="Tablas">Tablas</option>
-                      <option value="Mates">Mates</option>
-                    </Form.Select>
-                  </InputGroup>
-                </dd>
-              </div>
-              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                <dt className="text-sm font-medium leading-6 text-gray-900">
-                  Descripción
-                </dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                  <InputGroup className="mb-3">
-                    <InputGroup.Text id="groupDesc">
-                      <i className="bi bi-file-text"></i>
-                    </InputGroup.Text>
-                    <Form.Control as="textarea" rows={2} />
-                  </InputGroup>
-                </dd>
-              </div>
-              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <Formik
+            initialValues={{
+              nombre: prod.nombre,
+              precio: prod.precio,
+              desc: prod.descripcion,
+              cat: prod.categoria,
+              medidas: prod.medidas,
+              materiales: prod.materiales,
+            }}
+            // validationSchema={errorProdSchema}
+            onSubmit={(values) => console.log(values)}
+          >
+            {({ values, errors, touched, handleChange, handleSubmit }) => (
+              <Form className="divide-y divide-gray-100">
+                <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                  <dt className="text-sm font-medium leading-6 text-gray-900">
+                    Nombre
+                  </dt>
+                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                    <InputGroup className="mb-3">
+                      <InputGroup.Text id="groupName">
+                        <i className="bi bi-upc-scan"></i>
+                      </InputGroup.Text>
+                      <Form.Control
+                        name="nombre"
+                        aria-describedby="groupName"
+                        placeholder="Ej: Tabla 20x20"
+                        value={values.nombre}
+                        onChange={handleChange}
+                        className={
+                          errors.nombre && touched.nombre && "is-invalid"
+                        }
+                      />
+                    </InputGroup>
+                    <small className="text-danger">
+                      {errors.nombre && touched.nombre && errors.nombre}
+                    </small>
+                  </dd>
+                </div>
+                <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                  <dt className="text-sm font-medium leading-6 text-gray-900">
+                    Precio
+                  </dt>
+                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                    <InputGroup className="mb-3">
+                      <InputGroup.Text id="groupPrice">
+                        <i className="bi bi-currency-dollar"></i>
+                      </InputGroup.Text>
+                      <Form.Control
+                        name="precio"
+                        type="number"
+                        aria-describedby="groupPrice"
+                        placeholder="999"
+                        onChange={handleChange}
+                        value={values.precio}
+                        className={
+                          errors.precio && touched.precio && "is-invalid"
+                        }
+                      />
+                    </InputGroup>
+                    <small className="text-danger">
+                      {errors.precio && touched.precio && errors.precio}
+                    </small>
+                  </dd>
+                </div>
+                <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                  <dt className="text-sm font-medium leading-6 text-gray-900">
+                    Categoría
+                  </dt>
+                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                    <InputGroup className="mb-3">
+                      <InputGroup.Text id="groupCat">
+                        <i className="bi bi-tag"></i>
+                      </InputGroup.Text>
+                      <Form.Select
+                        name="cat"
+                        onChange={handleChange}
+                        value={values.cat}
+                        className={errors.cat && touched.cat && "is-invalid"}
+                      >
+                        <option value="Cuadros">Cuadros</option>
+                        <option value="Tablas">Tablas</option>
+                        <option value="Mates">Mates</option>
+                      </Form.Select>
+                    </InputGroup>
+                    <small className="text-danger">
+                      {errors.cat && touched.cat && errors.cat}
+                    </small>
+                  </dd>
+                </div>
+                <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                  <dt className="text-sm font-medium leading-6 text-gray-900">
+                    Descripción
+                  </dt>
+                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                    <InputGroup className="mb-3">
+                      <InputGroup.Text id="groupDesc">
+                        <i className="bi bi-file-text"></i>
+                      </InputGroup.Text>
+                      <Form.Control
+                        as="textarea"
+                        rows={2}
+                        placeholder="Pequeña descripción sobre el producto"
+                        name="desc"
+                        onChange={handleChange}
+                        value={values.desc}
+                        className={errors.desc && touched.desc && "is-invalid"}
+                      />
+                    </InputGroup>
+                    <small className="text-danger">
+                      {errors.desc && touched.desc && errors.desc}
+                    </small>
+                  </dd>
+                </div>
+                <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-sm font-medium leading-6 text-gray-900">
                     Características
                   </dt>
@@ -111,17 +167,17 @@ const EditarProd = () => {
                         </InputGroup.Text>
                         <Form.Control
                           placeholder="Ej: 20cm x 20cm"
-                          // onChange={handleChange}
+                          onChange={handleChange}
                           name="medidas"
-                          // value={values.medidas}
-                          // className={
-                          //   errors.medidas && touched.medidas && "is-invalid"
-                          // }
+                          value={values.medidas}
+                          className={
+                            errors.medidas && touched.medidas && "is-invalid"
+                          }
                         />
                       </InputGroup>
-                      {/* <small className="text-danger">
+                      <small className="text-danger">
                         {errors.medidas && touched.medidas && errors.medidas}
-                      </small> */}
+                      </small>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="materialesId">
                       <Form.Label>Materiales</Form.Label>
@@ -131,26 +187,36 @@ const EditarProd = () => {
                         </InputGroup.Text>
                         <Form.Control
                           placeholder="Ej: Madera"
-                          // onChange={handleChange}
+                          onChange={handleChange}
                           name="materiales"
-                          // value={values.materiales}
-                          // className={
-                          //   errors.materiales &&
-                          //   touched.materiales &&
-                          //   "is-invalid"
-                          // }
+                          value={values.materiales}
+                          className={
+                            errors.materiales &&
+                            touched.materiales &&
+                            "is-invalid"
+                          }
                         />
                       </InputGroup>
-                      {/* <small className="text-danger">
+                      <small className="text-danger">
                         {errors.materiales &&
                           touched.materiales &&
                           errors.materiales}
-                      </small> */}
+                      </small>
                     </Form.Group>
                   </dd>
                 </div>
-            </dl>
-          </div>
+                <div className="text-end">
+                  <Button
+                    type="submit"
+                    onClick={handleSubmit}
+                    className="mt-3 rounded-full"
+                  >
+                    Guardar cambios
+                  </Button>
+                </div>
+              </Form>
+            )}
+          </Formik>
         </Modal.Body>
       </Modal>
     </>
