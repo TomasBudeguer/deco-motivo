@@ -27,7 +27,7 @@ const PantallaDeCarga = () => {
         <Spinner animation="border text-white" />
       </div> */}
 
-      <div className="line-box mt-56">
+      <div className="line-box mt-32">
         {/* <div className="line"></div> */}
         <Progress
           size="lg"
