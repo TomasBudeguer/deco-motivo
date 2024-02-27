@@ -279,7 +279,7 @@ footer .wave#wave4 {
   transform: translateX(-50%) translate(-50%);
 }
 .loaders span {
-  font-size: 90px;
+  font-size: 80px;
   color: rgba(255, 255, 255, 0.1);
   display: inline-block;
   transition: all 0.5s;
@@ -358,8 +358,8 @@ footer .wave#wave4 {
 .line-box .line {
   height: 20px;
   border-radius: 20px;
-  /* background: #cf312b; */
-  background: linear-gradient(to bottom, #cf312b, #fff);
+  background: #cf312b;
+  /* background: linear-gradient(to bottom, #cf312b, #fff); */
   animation: carga 3s forwards cubic-bezier(0, 0, 0, 0);
 }
 
@@ -381,6 +381,45 @@ footer .wave#wave4 {
   }
   100% {
     opacity: 0;
+  }
+}
+
+.bg {
+  /* position: absolute; */
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.bubbles {
+  position: relative;
+  display: flex;
+}
+.bubbles span {
+  position: relative;
+  min-width: 30px;
+  height: 30px;
+  background-color: #cf312b;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #cf312b44,
+   0 0 50px #cf312b,
+   0 0 100px #cf312b;
+  margin: 0 4px;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(75s / var(--i));
+}
+.bubbles span:nth-child(even){
+  background-color: #606c68;
+  box-shadow: 0 0 0 10px #606c6844,
+  0 0 50px #606c68,
+  0 0 100px #606c68;
+}
+
+@keyframes animate {
+  0%{
+    transform: translateY(100vh) scale(0);
+  }
+  100%{
+    transform: translateY(-10vh) scale(1);
   }
 }
 

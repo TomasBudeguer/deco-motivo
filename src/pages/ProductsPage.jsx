@@ -53,7 +53,7 @@ const ProductsPage = () => {
     getProducts()
   }, [])
   return (
-    <Container>
+    <Container fluid>
       <Tabs
         defaultActiveKey="Todos"
         id="fill-tab-example"
