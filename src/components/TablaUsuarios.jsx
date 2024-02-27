@@ -2,36 +2,9 @@ import React from "react";
 import { Card, CardHeader, Typography } from "@material-tailwind/react";
 import { Container, InputGroup } from "react-bootstrap";
 import CrearAdminComp from "./CrearAdminComp";
-const TablaUsuarios = () => {
+const TablaUsuarios = ({ admins }) => {
   const TABLE_HEAD = ["Nombre", "Correo electrónico", "Acciones"];
 
-  const TABLE_ROWS = [
-    {
-      name: "John Michael",
-      job: "Manager",
-      date: "23/04/18",
-    },
-    {
-      name: "Alexa Liras",
-      job: "Developer",
-      date: "23/04/18",
-    },
-    {
-      name: "Laurent Perrier",
-      job: "Executive",
-      date: "19/09/17",
-    },
-    {
-      name: "Michael Levi",
-      job: "Developer",
-      date: "24/12/08",
-    },
-    {
-      name: "Richard Gran",
-      job: "Manager",
-      date: "04/10/21",
-    },
-  ];
   return (
     <Container>
       <Card className="h-full w-full overflow-scroll">
@@ -64,21 +37,21 @@ const TablaUsuarios = () => {
             </tr>
           </thead>
           <tbody>
-            {TABLE_ROWS.map(({ name, job, date }, index) => {
-              const isLast = index === TABLE_ROWS.length - 1;
+            {admins.map((admin, index) => {
+              const isLast = index === admins.length - 1;
               const classes = isLast
                 ? "p-4"
                 : "p-4 border-b border-blue-gray-50";
 
               return (
-                <tr key={name}>
+                <tr key={admin._id}>
                   <td className={classes}>
                     <Typography
                       variant="small"
                       color="blue-gray"
                       className="font-normal"
                     >
-                      {name}
+                      {admin.name}
                     </Typography>
                   </td>
                   <td className={classes}>
@@ -87,7 +60,7 @@ const TablaUsuarios = () => {
                       color="blue-gray"
                       className="font-normal"
                     >
-                      {job}
+                      {admin.email}
                     </Typography>
                   </td>
 

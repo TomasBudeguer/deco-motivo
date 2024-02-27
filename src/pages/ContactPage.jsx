@@ -100,14 +100,55 @@ const ContactPage = () => {
         <Row>
           <Col md={6} sm={12} data-aos="fade-right">
             <figcaption className="font-medium mt-24">
-              <div className="text-gray-500 fs-3">TITULO</div>
+              <div className="text-gray-500 fs-3">Tu consulta no molesta</div>
               <p className="text-slate-700 dark:text-slate-500">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Quisquam, tempora recusandae alias sed, aspernatur dignissimos
-                aliquam aperiam sit, dolor voluptates consequuntur esse in
-                assumenda totam cum? Quam exercitationem nobis animi.
+                Rellena el formulario, y próximamente uno de nosotros se pondrá
+                en contacto. También puedes escribirnos directamente a través de nuestro
+                correo electrónico o Whatsapp
               </p>
             </figcaption>
+            <div className="d-flex justify-center mt-4" data-aos="fade-right">
+              <a
+                href="mailto:impresion_luma@hotmail.com"
+                target="_blank"
+                rel="noreferrer"
+                className="w-75 bg-neutral-100 rounded p-2 no-underline border text-dark hover:bg-red-500 transition"
+              >
+                <div className="rounded-3">
+                  <div className="text-center">
+                    <Row className="flex-column">
+                      <Col>
+                        <i className="bi bi-envelope fs-2"></i>
+                      </Col>
+                      <Col>
+                        <p className="fs-6 ">impresion_luma@hotmail.com</p>
+                      </Col>
+                    </Row>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div className="d-flex justify-center mt-4" data-aos="fade-right">
+              <a
+                href={`https://wa.me/${3815984158}`}
+                target="_blank"
+                rel="noreferrer"
+                className="w-75 bg-neutral-100 rounded p-2 no-underline border text-dark hover:bg-red-500 transition"
+              >
+                <div className="rounded-3">
+                  <div className="text-center">
+                    <Row className="flex-column">
+                      <Col>
+                        <i className="bi bi-whatsapp fs-1"></i>
+                      </Col>
+                      <Col>
+                        <p className="fs-6 ">Whatsapp</p>
+                      </Col>
+                    </Row>
+                  </div>
+                </div>
+              </a>
+            </div>
           </Col>
           <Col md={6} sm={12}>
             <Formik

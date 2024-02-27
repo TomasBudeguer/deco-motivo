@@ -5,9 +5,10 @@ import Modal from "react-bootstrap/Modal";
 import { PaperClipIcon } from "@heroicons/react/20/solid";
 import { Form, InputGroup } from "react-bootstrap";
 import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
-import { Button } from "@material-tailwind/react";
 import { Formik } from "formik";
 import { errorProdSchema } from "../utils/validationSchemas";
+import { Button } from "@material-tailwind/react";
+import clientAxios from "../utils/axiosClient";
 
 const CrearProdComp = () => {
   const [show, setShow] = useState(false);
@@ -15,11 +16,19 @@ const CrearProdComp = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const createProduct = (values) => console.log(values);
+  const createProduct = async (values) => {
+    try {
+      const res = await clientAxios.post("/products")
+    } catch (error) {
+      
+    }
+  }
 
   return (
     <>
-      <Button onClick={handleShow}>Crear producto</Button>
+      <Button variant="filled" className="rounded-lg" onClick={handleShow}>
+        Crear producto
+      </Button>
 
       <Modal size={"lg"} show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -204,18 +213,14 @@ const CrearProdComp = () => {
                       value={values.img}
                       onChange={handleChange}
                       name="img"
-                      className={
-                        errors.img && touched.img && "is-invalid"
-                      }
+                      className={errors.img && touched.img && "is-invalid"}
                     />
                     <small className="text-danger">
-                      {errors.img &&
-                        touched.img &&
-                        errors.img}
+                      {errors.img && touched.img && errors.img}
                     </small>
                   </dd>
                   <div className="sm:col-start-2 sm:col-span-1 flex justify-center">
-                     {/* Acá va a ir la Previsualización de la imagen :D */}
+                    {/* Acá va a ir la Previsualización de la imagen :D */}
                     {/* <img
                       src="/logo.png"
                       alt="Previsualización de imagen"
