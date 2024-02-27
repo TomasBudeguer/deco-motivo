@@ -424,11 +424,19 @@ footer .wave#wave4 {
 }
 
 @media (max-width: 767px) {
-  /* .bordeLogo{
-    border: 2px solid black;
-    padding: 40px 123px;
-    border-radius: 100%;
-  } */
+  .bubbles span {
+    position: relative;
+    width: 100px;
+    height: 60px;
+    background-color: #cf312b;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #cf312b44,
+     0 0 50px #cf312b,
+     0 0 100px #cf312b;
+    margin: 0 4px;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(75s / var(--i));
+  }
 }
 @media all and (min-width: 576px) and (max-width: 768px) {
   /* .bordeLogo{
