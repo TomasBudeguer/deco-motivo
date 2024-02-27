@@ -7,7 +7,7 @@ const BubblesComp = () => {
       <div className="bg">
         <div className="bubbles">
           <span style={{ "--i": 11 }}></span>
-          <span style={{ "--i": 12 }}></span>
+          {/* <span style={{ "--i": 12 }}></span>
           <span style={{ "--i": 24 }}></span>
           <span style={{ "--i": 10 }}></span>
           <span style={{ "--i": 14 }}></span>
@@ -45,7 +45,7 @@ const BubblesComp = () => {
           <span style={{ "--i": 26 }}></span>
           <span style={{ "--i": 17 }}></span>
           <span style={{ "--i": 13 }}></span>
-          <span style={{ "--i": 28 }}></span>
+          <span style={{ "--i": 28 }}></span> */}
         </div>
         <div className="container vh-100  mx-auto d-flex justify-center  align-items-center" data-aos="zoom-in-up">
           <div className="text-center mb-56">
