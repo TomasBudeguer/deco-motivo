@@ -72,7 +72,7 @@ const AdminPage = () => {
             </span>
           }
         >
-          <TablaProductos products={products}/>
+          <TablaProductos products={products} getProducts={getProducts}/>
         </Tab>
         <Tab
           eventKey="admin"
