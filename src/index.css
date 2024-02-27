@@ -423,7 +423,7 @@ footer .wave#wave4 {
   }
 }
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .bubbles span {
     position: relative;
     width: 60px;
@@ -437,7 +437,8 @@ footer .wave#wave4 {
     animation: animate 15s linear infinite;
     animation-duration: calc(75s / var(--i));
   }
-}
+} */
+
 @media all and (min-width: 576px) and (max-width: 768px) {
   /* .bordeLogo{
     border: 2px solid black;
