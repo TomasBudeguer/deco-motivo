@@ -130,7 +130,7 @@ const ContactPage = () => {
             </div>
             <div className="d-flex justify-center mt-4" data-aos="fade-right">
               <a
-                href={`https://wa.me/${3815984158}`}
+                href={`https://wa.me/${import.meta.env.VITE_PHONE_NUMBER}`}
                 target="_blank"
                 rel="noreferrer"
                 className="w-75 bg-neutral-100 rounded p-2 no-underline border text-dark hover:bg-red-500 transition"
