@@ -54,57 +54,12 @@ const ProductsPage = () => {
   }, [])
   return (
     <Container fluid>
-      <Tabs
-        defaultActiveKey="Todos"
-        id="fill-tab-example"
-        className="mb-3"
-        fill
-      >
-        <Tab
-          eventKey="Todos"
-          title={
-            <span style={{ color: "black" }} className="flex justify-center">
-              Todos
-            </span>
-          }
-        >
-          <Row className="my-5">
+     
+      <Row className="my-5">
             {products.map((prod) => (
               <CardProducts key={prod._id} prod={prod}/>
             ))}
           </Row>
-        </Tab>
-        <Tab
-          eventKey="profile"
-          title={
-            <span style={{ color: "black" }} className="flex justify-center">
-              Categoria
-            </span>
-          }
-        >
-          {/* <Row className="my-5">
-            {products.map((prod) => (
-              <CardProducts key={prod.id} prod={prod}></CardProducts>
-            ))}
-            <CardProducts></CardProducts>
-          </Row> */}
-        </Tab>
-        <Tab
-          eventKey="longer-tab"
-          title={
-            <span style={{ color: "black" }} className="flex justify-center">
-              Categoria
-            </span>
-          }
-        >
-          {/* <Row className="my-5">
-            {products.map((prod) => (
-              <CardProducts key={prod.id} prod={prod}></CardProducts>
-            ))}
-            <CardProducts></CardProducts>
-          </Row> */}
-        </Tab>
-      </Tabs>
     </Container>
   );
 };

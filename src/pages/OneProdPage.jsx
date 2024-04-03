@@ -17,7 +17,7 @@ const OneProdPage = () => {
   }, []);
   const handleWhatsapp = () => {
     const message = `Hola, tengo dudas acerca de este producto: ${prod.nombre}`;
-    const url = `https://wa.me/${3815984158}?text=${encodeURIComponent(
+    const url = `https://wa.me/${import.meta.env.VITE_PHONE_NUMBER}?text=${encodeURIComponent(
       message
     )}`;
     open(url, "_blank");

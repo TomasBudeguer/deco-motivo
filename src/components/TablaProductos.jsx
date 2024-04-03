@@ -1,21 +1,11 @@
 import React from "react";
-import { PencilIcon } from "@heroicons/react/24/solid";
-import {
-  ArrowDownTrayIcon,
-  MagnifyingGlassIcon,
-} from "@heroicons/react/24/outline";
+
 import {
   Card,
   CardHeader,
   Typography,
-  Button,
   CardBody,
-  Chip,
-  CardFooter,
   Avatar,
-  IconButton,
-  Tooltip,
-  Input,
 } from "@material-tailwind/react";
 import EditarProd from "./EditarProd";
 import { Form, InputGroup } from "react-bootstrap";
@@ -23,60 +13,7 @@ import CrearProdComp from "./CrearProdComp";
 
 const TABLE_HEAD = ["Nombre", "Precio", "Categoria", "Editar", "Eliminar"];
 
-const TABLE_ROWS = [
-  {
-    img: "https://docs.material-tailwind.com/img/logos/logo-spotify.svg",
-    name: "Spotify",
-    amount: "$2,500",
-    date: "Wed 3:00pm",
-    status: "paid",
-    account: "visa",
-    accountNumber: "1234",
-    expiry: "06/2026",
-  },
-  {
-    img: "https://docs.material-tailwind.com/img/logos/logo-amazon.svg",
-    name: "Amazon",
-    amount: "$5,000",
-    date: "Wed 1:00pm",
-    status: "paid",
-    account: "master-card",
-    accountNumber: "1234",
-    expiry: "06/2026",
-  },
-  {
-    img: "https://docs.material-tailwind.com/img/logos/logo-pinterest.svg",
-    name: "Pinterest",
-    amount: "$3,400",
-    date: "Mon 7:40pm",
-    status: "pending",
-    account: "master-card",
-    accountNumber: "1234",
-    expiry: "06/2026",
-  },
-  {
-    img: "https://docs.material-tailwind.com/img/logos/logo-google.svg",
-    name: "Google",
-    amount: "$1,000",
-    date: "Wed 5:00pm",
-    status: "paid",
-    account: "visa",
-    accountNumber: "1234",
-    expiry: "06/2026",
-  },
-  {
-    img: "https://docs.material-tailwind.com/img/logos/logo-netflix.svg",
-    name: "netflix",
-    amount: "$14,000",
-    date: "Wed 3:30am",
-    status: "cancelled",
-    account: "visa",
-    accountNumber: "1234",
-    expiry: "06/2026",
-  },
-];
-
-const TablaProductos = ({ products }) => {
+const TablaProductos = ({ products, getProducts }) => {
   return (
     <Card className="h-full w-full">
       <CardHeader floated={false} shadow={false} className="rounded-none">
@@ -98,7 +35,7 @@ const TablaProductos = ({ products }) => {
               />
             </InputGroup>
           </div>
-          <CrearProdComp />
+          <CrearProdComp getProducts={getProducts} />
         </div>
       </CardHeader>
       <CardBody className="overflow-scroll px-0">
@@ -134,7 +71,7 @@ const TablaProductos = ({ products }) => {
                     <div className="flex items-center gap-3">
                       <Avatar
                         src={prod?.imgs[0]}
-                        alt={name}
+                        alt={prod.nombre}
                         size="lg"
                         className=" rounded-full border w-32   p-1"
                       />
@@ -167,10 +104,10 @@ const TablaProductos = ({ products }) => {
                   </td>
 
                   <td className={classes}>
-                    <EditarProd prod={prod}/>
+                    <EditarProd prod={prod} />
                   </td>
                   <td className={classes}>
-                    <button className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-full text-sm p-2 text-center me-2 mb-2">
+                    <button onClick={() => deleteProd(prod._id)} className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-full text-sm p-2 text-center me-2 mb-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"

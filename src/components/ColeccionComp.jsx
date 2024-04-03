@@ -1,26 +1,27 @@
 import React from "react";
 import { Col, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 const callouts = [
   {
     name: 'Tablas',
     description: 'Tablas de madera con grabado láser',
     imageSrc: 'https://acdn.mitiendanube.com/stores/001/045/108/products/121-09de8ccf489c1803e016601753869731-1024-1024.png',
     imageAlt: 'Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.',
-    href: '#',
+    href: '/products',
   },
   {
     name: 'Cuadros',
     description: 'Cuadros pintados personalizados',
     imageSrc: '/cuadroColeccion.jpeg',
     imageAlt: 'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.',
-    href: '#',
+    href: '/products',
   },
   {
     name: 'Mates',
     description: 'Mates artesanales',
     imageSrc: 'https://www.entrerios.gov.ar/manosentrerrianas/sites/default/files/styles/prueba/public/galeria_emprendedor/MATE%20ARTESANAL%20GW%20%2824%29.jpg?itok=YFIeL8wD',
     imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
-    href: '#',
+    href: '/products',
   },
 ]
 export const ColeccionComp = () => {
@@ -44,10 +45,10 @@ export const ColeccionComp = () => {
                     />
                 </div>
                 <h3 className="mt-6 text-sm text-gray-500">
-                  <a href={callout.href}>
+                  <Link  to={callout.href}>
                     <span className="absolute inset-0" />
                     {callout.name}
-                  </a>
+                  </Link>
                 </h3>
                 <p className="text-base font-semibold text-gray-900">{callout.description}</p>
               </div>
