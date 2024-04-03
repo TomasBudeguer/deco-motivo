@@ -60,10 +60,7 @@ const ContactPage = () => {
         message: msg,
       };
       await emailjs.send(
-        import.meta.env.VITE_EMAIL_SERVICE_ID,
-        import.meta.env.VITE_EMAIL_TEMPLATE_ID,
-        templateParams,
-        import.meta.env.VITE_EMAIL_PUBLIC_KEY
+      
       );
 
       toast.success("Mensaje enviado correctamente", {
@@ -121,7 +118,7 @@ const ContactPage = () => {
                         <i className="bi bi-envelope fs-2"></i>
                       </Col>
                       <Col>
-                        <p className="fs-6 ">impresion_luma@hotmail.com</p>
+                        <p className="fs-6 ">example@hotmail.com</p>
                       </Col>
                     </Row>
                   </div>
