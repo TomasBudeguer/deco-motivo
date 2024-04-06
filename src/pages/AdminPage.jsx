@@ -25,7 +25,7 @@ const AdminPage = () => {
 
   const getAdminUsers = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_BACK_URL_LOCAL}`, {
+      const response = await fetch(`https://deco-motivo-back.vercel.app`, {
         method: "GET",
         headers: {
           "Content-Type": "Application/json",

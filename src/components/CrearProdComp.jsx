@@ -42,7 +42,7 @@ const CrearProdComp = ({ getProducts }) => {
       });
 
       const res = await fetch(
-        `${import.meta.env.VITE_BACK_URL_LOCAL}/products`,
+        `https://deco-motivo-back.vercel.app/products`,
         {
           method: "POST",
           headers: {

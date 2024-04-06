@@ -9,7 +9,7 @@ const ProductsPage = () => {
   
   const getProducts = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_BACK_URL_LOCAL}`);
+      const response = await fetch(`https://deco-motivo-back.vercel.app`);
       const res = await response.json()
       setProducts(res.allProds)
     } catch (error) {
@@ -22,7 +22,6 @@ const ProductsPage = () => {
   }, [])
   return (
     <Container fluid>
-     
       <Row className="my-5">
             {products.map((prod) => (
               <CardProducts key={prod._id} prod={prod}/>

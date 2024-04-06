@@ -16,7 +16,7 @@ const CrearAdminComp = ({ getAdminUsers }) => {
   const createAdmin = async ({ name, email, pass }) => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACK_URL_LOCAL}/admins`,
+        `https://deco-motivo-back.vercel.app/admins`,
 
         {
           method: "POST",

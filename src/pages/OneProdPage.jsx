@@ -7,7 +7,7 @@ const OneProdPage = () => {
   const [prod, setProd] = useState({});
 
   const getOneProduct = async () => {
-    const response = await fetch(`${import.meta.env.VITE_BACK_URL_LOCAL}/${params.id}`);
+    const response = await fetch(`https://deco-motivo-back.vercel.app/${params.id}`);
     const res = await response.json();
     setProd(res.oneProd);
   };
@@ -17,7 +17,7 @@ const OneProdPage = () => {
   }, []);
   const handleWhatsapp = () => {
     const message = `Hola, tengo dudas acerca de este producto: ${prod.nombre}`;
-    const url = `https://wa.me/${import.meta.env.VITE_PHONE_NUMBER}?text=${encodeURIComponent(
+    const url = `https://wa.me/${import.meta.env.VITE_PHONE_NUMBERsad}?text=${encodeURIComponent(
       message
     )}`;
     open(url, "_blank");
