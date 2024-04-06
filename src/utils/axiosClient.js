@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const clientAxios = axios.create({
-  baseURL: "http://localhost:4444"
+  baseURL: import.meta.env.VITE_BACK_URL_LOCAL,
 });
 
 export const config = {

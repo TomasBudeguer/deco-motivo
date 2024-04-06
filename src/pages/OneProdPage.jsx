@@ -7,7 +7,7 @@ const OneProdPage = () => {
   const [prod, setProd] = useState({});
 
   const getOneProduct = async () => {
-    const response = await fetch(`http://localhost:4444/products/${params.id}`);
+    const response = await fetch(`${import.meta.env.VITE_BACK_URL_LOCAL}/${params.id}`);
     const res = await response.json();
     setProd(res.oneProd);
   };
