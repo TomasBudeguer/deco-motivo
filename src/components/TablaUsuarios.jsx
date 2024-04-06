@@ -11,7 +11,7 @@ const TablaUsuarios = ({ admins, getAdminUsers }) => {
   const deleteUser = async (id) => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACK_URL_LOCAL}/admins/${id}`,
+        `https://deco-motivo-back.vercel.app/admins/${id}`,
         {
           method: "DELETE",
           headers: {

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const clientAxios = axios.create({
-  baseURL: import.meta.env.VITE_BACK_URL_LOCAL,
+  baseURL: "https://deco-motivo-back.vercel.app",
 });
 
 export const config = {
