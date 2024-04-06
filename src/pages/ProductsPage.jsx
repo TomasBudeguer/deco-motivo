@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
-
-import { Container, Row, Tab, Tabs } from "react-bootstrap";
-
+import { Container, Row } from "react-bootstrap";
 import CardProducts from "../components/CardProducts";
+import clientAxios from "../utils/axiosClient";
 
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
   
   const getProducts = async () => {
     try {
-      const response = await fetch(`https://deco-motivo-back.vercel.app`);
-      const res = await response.json()
-      setProducts(res.allProds)
+      const res = await clientAxios.get("/products")
+      setProducts(res.data.allProds)
     } catch (error) {
       console.log(error)
     }

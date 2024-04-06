@@ -118,7 +118,7 @@ const ContactPage = () => {
                         <i className="bi bi-envelope fs-2"></i>
                       </Col>
                       <Col>
-                        <p className="fs-6 ">example@hotmail.com</p>
+                        <p className="fs-6">example@hotmail.com</p>
                       </Col>
                     </Row>
                   </div>
@@ -127,7 +127,7 @@ const ContactPage = () => {
             </div>
             <div className="d-flex justify-center mt-4" data-aos="fade-right">
               <a
-                href={`https://wa.me/${import.meta.env.VITE_PHONE_NUMBER}`}
+                href={`https://wa.me/${import.meta.env.VITE_PHONE_NUMBERasd}`}
                 target="_blank"
                 rel="noreferrer"
                 className="w-75 bg-neutral-100 rounded p-2 no-underline border text-dark hover:bg-red-500 transition"

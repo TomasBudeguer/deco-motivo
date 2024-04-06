@@ -1,15 +1,17 @@
 import { Button } from "@material-tailwind/react";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import clientAxios from "../utils/axiosClient";
 
 const OneProdPage = () => {
   const params = useParams();
   const [prod, setProd] = useState({});
 
   const getOneProduct = async () => {
-    const response = await fetch(`https://deco-motivo-back.vercel.app/${params.id}`);
-    const res = await response.json();
-    setProd(res.oneProd);
+    // const response = await fetch(`https://deco-motivo-back.vercel.app/${params.id}`);
+    // const res = await response.json();
+    const res = await clientAxios.get(`/products/${params.id}`)
+    setProd(res.data.oneProd);
   };
 
   useEffect(() => {

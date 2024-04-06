@@ -192,7 +192,7 @@ footer .wave#wave4 {
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   width: 100%;
   height: 300px;
   background-color: #efebe5;
@@ -359,7 +359,6 @@ footer .wave#wave4 {
   height: 20px;
   border-radius: 20px;
   background: #cf312b;
-  /* background: linear-gradient(to bottom, #cf312b, #fff); */
   animation: carga 3s forwards cubic-bezier(0, 0, 0, 0);
 }
 
@@ -385,7 +384,6 @@ footer .wave#wave4 {
 }
 
 .bg {
-  /* position: absolute; */
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -423,26 +421,3 @@ footer .wave#wave4 {
   }
 }
 
-/* @media (max-width: 767px) {
-  .bubbles span {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    background-color: #cf312b;
-    border-radius: 50%;
-    box-shadow: 0 0 0 10px #cf312b44,
-     0 0 50px #cf312b,
-     0 0 100px #cf312b;
-    margin: 0 4px;
-    animation: animate 15s linear infinite;
-    animation-duration: calc(75s / var(--i));
-  }
-} */
-
-@media all and (min-width: 576px) and (max-width: 768px) {
-  /* .bordeLogo{
-    border: 2px solid black;
-    padding: 60px 140px;
-    border-radius: 100%;
-  } */
-}
