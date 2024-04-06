@@ -25,7 +25,7 @@ const AdminPage = () => {
 
   const getAdminUsers = async () => {
     try {
-      const response = await fetch("http://localhost:4444/admins", {
+      const response = await fetch(`${import.meta.env.VITE_BACK_URL_LOCAL}`, {
         method: "GET",
         headers: {
           "Content-Type": "Application/json",
